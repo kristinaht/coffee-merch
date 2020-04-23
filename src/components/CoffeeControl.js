@@ -13,7 +13,8 @@ class CoffeeControl extends React.Component {
   render(){
     return(
       <React.Fragment>
-
+        <CoffeeList />
+        <NewCoffeeForm />
       </React.Fragment>
     )
   }
