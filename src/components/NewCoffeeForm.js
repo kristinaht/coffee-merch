@@ -3,10 +3,10 @@ import { v4 } from 'uuid';
 
 function NewCoffeeForm(props){
 
-  function handleNewTicketFormSubmission(event) {
+  function handleNewCoffeeFormSubmission(event) {
     //something goes here.
   }
-  
+
   return(
     <React.Fragment>
       <form onSubmit={handleNewCoffeeFormSubmission}>
@@ -19,6 +19,7 @@ function NewCoffeeForm(props){
         description='description'
         placeholder='Description' />
       </form>
+      <button type='submit'>Submit</button>
     </React.Fragment>
   );
 }
