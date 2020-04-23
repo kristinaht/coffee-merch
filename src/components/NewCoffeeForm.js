@@ -2,6 +2,11 @@ import React from 'react';
 import { v4 } from 'uuid';
 
 function NewCoffeeForm(props){
+
+  function handleNewTicketFormSubmission(event) {
+    //something goes here.
+  }
+  
   return(
     <React.Fragment>
       <form onSubmit={handleNewCoffeeFormSubmission}>
