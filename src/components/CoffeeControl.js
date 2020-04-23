@@ -13,24 +13,27 @@ class CoffeeControl extends React.Component {
   }
 
   handleClick = () => {
-    this.setState({formVisibleOnPage: true}); //setState() takes an object and this object holds any key-value pairs that we want to update
+    this.setState(prevState => ({
+      formVisibleOnPage: !prevState.formVisibleOnPage
+    }));
   }
 
   render(){
     let currentlyVisibleState = null;
-    let addCoffeeButton = null;
+    let buttonText = null;
 
     if(this.state.formVisibleOnPage){
       currentlyVisibleState=<NewCoffeeForm />
+      buttonText="Return to Coffee List";
     }else{
       currentlyVisibleState=<CoffeeList />
-      addCoffeeButton = <button onClick={this.handleClick}>Add Coffee</button> //when you click the button onClick click handler will trigger the handleClick function that belongs to CoffeeControl. We are going to be rendering an object that is an instance of the TicketControl component and 'this' refers to the specific instance being rendered. 
+      buttonText = "Add coffe";
     }
 
     return(
       <React.Fragment>
         {currentlyVisibleState}
-        {addCoffeeButton}
+        <button onClick={this.handleClick}>{buttonText}</button>
       </React.Fragment>
     )
   }
